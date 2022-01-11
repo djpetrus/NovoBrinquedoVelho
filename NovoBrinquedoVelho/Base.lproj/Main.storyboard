@@ -1,24 +1,414 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIg-gc-5kG">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Brinquedos-->
+        <scene sceneID="KQ3-GH-haW">
+            <objects>
+                <tableViewController id="djU-vS-aG4" customClass="ToyTableViewController" customModule="NovoBrinquedoVelho" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="HL0-cT-etr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="155" id="HUK-eH-2VX" customClass="ToyTableViewCell" customModule="NovoBrinquedoVelho" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="155"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HUK-eH-2VX" id="j2b-SY-OmQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="155"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nwv-aV-KsZ">
+                                            <rect key="frame" x="20" y="11" width="374" height="133"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qrx-li-dsl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="133"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="ein-cM-tFz"/>
+                                                        <constraint firstAttribute="width" constant="90" id="rWQ-A0-Gxp"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kgq-HL-jIZ">
+                                                    <rect key="frame" x="98" y="0.0" width="276" height="133"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do brinquedo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qi-lQ-dVs">
+                                                            <rect key="frame" x="0.0" y="0.0" width="276" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado brinquedo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yb-7U-fnj">
+                                                            <rect key="frame" x="0.0" y="26.5" width="276" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lY-Hn-VET">
+                                                            <rect key="frame" x="0.0" y="53" width="276" height="27"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hdJ-QW-4B5">
+                                                            <rect key="frame" x="0.0" y="80" width="276" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTr-d4-6zz">
+                                                            <rect key="frame" x="0.0" y="106.5" width="276" height="26.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qrx-li-dsl" firstAttribute="top" secondItem="nwv-aV-KsZ" secondAttribute="top" id="C3s-1U-J14"/>
+                                                <constraint firstItem="qrx-li-dsl" firstAttribute="leading" secondItem="nwv-aV-KsZ" secondAttribute="leading" id="rrt-7a-Cqb"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="nwv-aV-KsZ" firstAttribute="bottom" secondItem="j2b-SY-OmQ" secondAttribute="bottomMargin" id="6lt-Tc-skq"/>
+                                        <constraint firstItem="nwv-aV-KsZ" firstAttribute="top" secondItem="j2b-SY-OmQ" secondAttribute="topMargin" id="MS0-hE-oKA"/>
+                                        <constraint firstItem="nwv-aV-KsZ" firstAttribute="leading" secondItem="j2b-SY-OmQ" secondAttribute="leadingMargin" id="iad-jc-aE2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="nwv-aV-KsZ" secondAttribute="trailing" id="xou-kz-aaT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageViewToyPhoto" destination="qrx-li-dsl" id="Vei-Oh-csP"/>
+                                    <outlet property="labelDonorAddres" destination="4lY-Hn-VET" id="Y7A-rZ-LA9"/>
+                                    <outlet property="labelDonorName" destination="XTr-d4-6zz" id="Xwf-XN-mU1"/>
+                                    <outlet property="labelDonorTelephone" destination="hdJ-QW-4B5" id="8SL-Jr-0KL"/>
+                                    <outlet property="labelToyName" destination="6qi-lQ-dVs" id="4Wl-j8-xsp"/>
+                                    <outlet property="labelToyState" destination="1Yb-7U-fnj" id="X5k-BN-oD9"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="u7M-df-z6w"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="djU-vS-aG4" id="pCj-1C-RuB"/>
+                            <outlet property="delegate" destination="djU-vS-aG4" id="twC-z6-fl1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Brinquedos" id="D2w-7k-mlL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="2YD-Xm-bkc">
+                            <connections>
+                                <segue destination="26h-oV-IYf" kind="show" id="9tz-Bc-z30"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sdJ-D9-aEY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="95.758928571428569"/>
+        </scene>
+        <!--Nova doação de brinquedo-->
+        <scene sceneID="hb7-EU-oXk">
+            <objects>
+                <viewController id="26h-oV-IYf" customClass="ToyFormViewController" customModule="NovoBrinquedoVelho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gxi-ve-cOR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EWi-Ot-H6Q">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="961-qy-XkN">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="696"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0RT-XQ-tJb">
+                                                <rect key="frame" x="16" y="20" width="382" height="656"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h51-PN-HDv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="609"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do brinquedo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h3r-oX-t3H">
+                                                                <rect key="frame" x="0.0" y="0.0" width="382" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jGr-6R-Rtb">
+                                                                <rect key="frame" x="0.0" y="42" width="382" height="32"/>
+                                                                <segments>
+                                                                    <segment title="Mau estado"/>
+                                                                    <segment title="Bom estado"/>
+                                                                    <segment title="Ótimo estado"/>
+                                                                </segments>
+                                                            </segmentedControl>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Endereço do doador" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WU2-BR-Cbf">
+                                                                <rect key="frame" x="0.0" y="81" width="382" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telefone do doador" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mk7-NE-nHJ">
+                                                                <rect key="frame" x="0.0" y="123" width="382" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                            </textField>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do doador" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-yM-Wtk">
+                                                                <rect key="frame" x="0.0" y="165" width="382" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbV-GS-Pop">
+                                                                <rect key="frame" x="0.0" y="207" width="382" height="31"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Escolha uma foto para o brinquedo"/>
+                                                                <connections>
+                                                                    <action selector="selectPhoto:" destination="26h-oV-IYf" eventType="touchUpInside" id="XDs-Le-tku"/>
+                                                                </connections>
+                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UAs-V9-wxi">
+                                                                <rect key="frame" x="0.0" y="246" width="382" height="200"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do brinquedo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpw-to-3Of">
+                                                                <rect key="frame" x="0.0" y="454" width="382" height="17"/>
+                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UCB-GA-Pua">
+                                                                <rect key="frame" x="0.0" y="479" width="382" height="130"/>
+                                                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="130" id="bgZ-7I-0bv"/>
+                                                                </constraints>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                            </textView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42p-TU-Sfh">
+                                                        <rect key="frame" x="0.0" y="625" width="382" height="31"/>
+                                                        <color key="backgroundColor" name="AccentColor"/>
+                                                        <color key="tintColor" systemColor="linkColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Gravar a doação do brinquedo"/>
+                                                        <connections>
+                                                            <action selector="saveToy:" destination="26h-oV-IYf" eventType="touchUpInside" id="ypZ-sW-gcW"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="0RT-XQ-tJb" firstAttribute="top" secondItem="961-qy-XkN" secondAttribute="top" constant="20" id="Gju-Sz-sk8"/>
+                                            <constraint firstItem="0RT-XQ-tJb" firstAttribute="leading" secondItem="961-qy-XkN" secondAttribute="leading" constant="16" id="O8X-9f-aVA"/>
+                                            <constraint firstAttribute="bottom" secondItem="0RT-XQ-tJb" secondAttribute="bottom" constant="20" id="T9v-uy-9Wt"/>
+                                            <constraint firstAttribute="trailing" secondItem="0RT-XQ-tJb" secondAttribute="trailing" constant="16" id="smn-zt-jLO"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="bottom" secondItem="FaK-BG-IiR" secondAttribute="bottom" id="4MP-Px-o82"/>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="top" secondItem="FaK-BG-IiR" secondAttribute="top" id="71V-I1-eRV"/>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="trailing" secondItem="FaK-BG-IiR" secondAttribute="trailing" id="aq8-gj-7ON"/>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="leading" secondItem="FaK-BG-IiR" secondAttribute="leading" id="jNX-Gm-WHc"/>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="height" secondItem="FaK-BG-IiR" secondAttribute="height" priority="250" id="jyk-ev-6eL"/>
+                                    <constraint firstItem="961-qy-XkN" firstAttribute="width" secondItem="EWi-Ot-H6Q" secondAttribute="width" id="xed-O4-iXq"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="FaK-BG-IiR"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="bbU-dU-Yi8"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="z9g-9d-Stn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EWi-Ot-H6Q" firstAttribute="bottom" secondItem="z9g-9d-Stn" secondAttribute="bottom" id="CtF-zq-dHn"/>
+                            <constraint firstItem="EWi-Ot-H6Q" firstAttribute="leading" secondItem="z9g-9d-Stn" secondAttribute="leading" id="UCA-Dv-xm9"/>
+                            <constraint firstItem="EWi-Ot-H6Q" firstAttribute="trailing" secondItem="z9g-9d-Stn" secondAttribute="trailing" id="ZQX-w2-OPB"/>
+                            <constraint firstItem="EWi-Ot-H6Q" firstAttribute="top" secondItem="z9g-9d-Stn" secondAttribute="top" id="pFH-uv-xu6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nova doação de brinquedo" largeTitleDisplayMode="never" id="klD-DP-GR2"/>
+                    <connections>
+                        <outlet property="buttonGravarEditar" destination="42p-TU-Sfh" id="tkk-lz-8Cs"/>
+                        <outlet property="imageViewToyPhoto" destination="UAs-V9-wxi" id="LWd-MZ-RfN"/>
+                        <outlet property="scrollView" destination="EWi-Ot-H6Q" id="XQ9-uG-HCM"/>
+                        <outlet property="segmentedControlToyState" destination="jGr-6R-Rtb" id="uRD-xl-h99"/>
+                        <outlet property="textFieldDonorAddres" destination="WU2-BR-Cbf" id="j3E-9W-JwR"/>
+                        <outlet property="textFieldDonorName" destination="Kef-yM-Wtk" id="Pbq-Vd-RVr"/>
+                        <outlet property="textFieldDonorTelephone" destination="mk7-NE-nHJ" id="CY1-YL-vS2"/>
+                        <outlet property="textFieldToyName" destination="h3r-oX-t3H" id="dfY-4w-aEJ"/>
+                        <outlet property="textViewToyDescription" destination="UCB-GA-Pua" id="z0p-nY-sWv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mYq-cI-RlS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="818.84057971014499" y="95.758928571428569"/>
+        </scene>
+        <!--Toy View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ToyViewController" customModule="NovoBrinquedoVelho" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jax-F0-vtr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZVJ-ug-d72">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="260"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="260" id="EgR-dq-d5T"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6tP-PR-DOo">
+                                        <rect key="frame" x="0.0" y="268" width="414" height="84.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do brinquedo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="elA-sX-SNP">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="16.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Estado do brinquedo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c23-Wk-ZvW">
+                                                <rect key="frame" x="0.0" y="16.5" width="414" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endereço do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNC-CB-UF3">
+                                                <rect key="frame" x="0.0" y="33.5" width="414" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Telefone do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XY-K1-igs">
+                                                <rect key="frame" x="0.0" y="50.5" width="414" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome do doador" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guq-I2-3Bl">
+                                                <rect key="frame" x="0.0" y="67.5" width="414" height="17"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gl1-Vg-6qx">
+                                        <rect key="frame" x="0.0" y="360.5" width="414" height="501.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vFJ-eR-4Pd">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="451.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição do brinquedo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvz-4c-yj8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gvg-LM-47q">
+                                                        <rect key="frame" x="0.0" y="20.5" width="414" height="431"/>
+                                                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                                        <color key="textColor" systemColor="labelColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="vFJ-eR-4Pd" secondAttribute="bottom" constant="50" id="ITd-f9-i4H"/>
+                                            <constraint firstItem="vFJ-eR-4Pd" firstAttribute="top" secondItem="gl1-Vg-6qx" secondAttribute="top" id="LwC-fc-gB0"/>
+                                            <constraint firstAttribute="trailing" secondItem="vFJ-eR-4Pd" secondAttribute="trailing" id="qG5-jl-efJ"/>
+                                            <constraint firstItem="vFJ-eR-4Pd" firstAttribute="leading" secondItem="gl1-Vg-6qx" secondAttribute="leading" id="x5B-JG-qDN"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZVJ-ug-d72" firstAttribute="top" secondItem="Jax-F0-vtr" secondAttribute="top" id="5fd-f0-Rfb"/>
+                                    <constraint firstItem="ZVJ-ug-d72" firstAttribute="leading" secondItem="Jax-F0-vtr" secondAttribute="leading" id="lOx-Rq-sT0"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZVJ-ug-d72" secondAttribute="trailing" id="xkl-d0-Fne"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jax-F0-vtr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="51r-Ue-o2x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jax-F0-vtr" secondAttribute="trailing" id="Qrz-r4-xVM"/>
+                            <constraint firstItem="Jax-F0-vtr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rGc-BE-bTO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jax-F0-vtr" secondAttribute="bottom" id="sjG-oP-gPg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="pey-Ty-sd4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="yjm-rN-hxH">
+                            <connections>
+                                <segue destination="26h-oV-IYf" kind="show" id="Emi-Gg-bB5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageViewToyPhoto" destination="ZVJ-ug-d72" id="1Rw-Tc-gXr"/>
+                        <outlet property="labelDonorAddres" destination="dNC-CB-UF3" id="3hB-Ps-FNg"/>
+                        <outlet property="labelDonorName" destination="guq-I2-3Bl" id="5k5-sv-tbL"/>
+                        <outlet property="labelDonorTelephone" destination="1XY-K1-igs" id="GDH-0D-Egz"/>
+                        <outlet property="labelStateToy" destination="c23-Wk-ZvW" id="vAB-cw-mLh"/>
+                        <outlet property="labelToyName" destination="elA-sX-SNP" id="CWw-vC-Jjg"/>
+                        <outlet property="textViewToyDescription" destination="gvg-LM-47q" id="LoT-Ja-Ygq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="92.753623188405811" y="759.375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hOB-LQ-CvW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qIg-gc-5kG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MTC-RH-6xu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="104"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="djU-vS-aG4" kind="relationship" relationship="rootViewController" id="UO6-Nf-uOs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l68-Gs-ZY8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-649" y="96"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Emi-Gg-bB5"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
