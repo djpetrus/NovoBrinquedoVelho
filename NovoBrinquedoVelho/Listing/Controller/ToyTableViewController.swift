@@ -6,40 +6,61 @@
 //
 
 import UIKit
+import CoreData
+import SwiftUI
+import FirebaseFirestore
 
 class ToyTableViewController: UITableViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    
+    @ObservedObject
+    private var toyAPI = ToyAPI()
+    
+    var toys: [Toy] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadToys()
+    }
+    
+    func loadToys() {
+        self.toyAPI.loadToys { [weak self] result in
+            switch result {
+            case .success(let toys):
+                self?.toys = toys
+                self?.tableView.reloadData()
+            default:
+                print("Erro!!!")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let toyViewController = segue.destination as? ToyViewController
+            , let indexPath = tableView.indexPathForSelectedRow
+        {
+            toyViewController.toy = self.toys[indexPath.row]
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return toys.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? ToyTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.configureWith(self.toys[indexPath.row])
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -49,17 +70,12 @@ class ToyTableViewController: UITableViewController {
     }
     */
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            ToyAPI().deleteToy(toy: self.toys[indexPath.row])
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
